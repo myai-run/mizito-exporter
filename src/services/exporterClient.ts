@@ -1,9 +1,9 @@
 import axios from "axios";
-import { TokenManager } from "./token-manager.js";
+import { TokenManager } from "../lib/token-manager.js";
 
 const MIZITO_BASE_URL = "https://app.mizito.ir"
 const DL_BASE_URL = "https://cdn1.mizito.ir/cdn/dl"
-const MIZITO_TOKEN = ""
+const MIZITO_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlMGE1NDRlYS0wNDlmLTRmYWEtOTliYS0wNjQxOTE3ZTE0ZjYiLCJpYXQiOjE3OTM5OTM1OTF9.Jyh84hHLhyWWWFmuUDJnX5yhJSIW0wG6eYH3Hhn8gK8"
 
 export const tokenManager = new TokenManager(MIZITO_TOKEN)
 

@@ -1,6 +1,6 @@
 import type { AxiosResponse } from "axios"
 import { exporterClient, dlClient } from "./exporterClient.js"
-import type { Project, Task, User, WorkspacePayload } from "./types.js"
+import type { Project, Task, User, WorkspacePayload } from "../types.js"
 
 export const getWorkspaceToken = async (workspace_id: string): Promise<AxiosResponse<{ token: string }>>  => {
     return exporterClient().post("/api/workspace/switch", { workspace_id })

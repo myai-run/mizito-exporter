@@ -334,3 +334,42 @@ export interface WorkspacePayload {
   access_crm_creator: boolean;
   access_admin: boolean;
 }
+
+// -- Exported data types
+export interface ExportedWorkspace{
+  name: string;
+  mizito_id: string;
+}
+
+export interface ExportedUser{
+  name: string;
+  mizito_id: string;
+  workspace: ExportedWorkspace[];
+}
+
+export interface ExportedTaskComment{
+  content: string;
+  creator: ExportedUser;
+  mentioned_user: ExportedUser;
+}
+
+export interface ExportedTask {
+  workspace_name: string;
+  project_name: string;
+  title: string;
+  start_date: string;
+  finish_date: string;
+  assignee: ExportedUser;
+  owner: ExportedUser;
+  attachment_path: string;
+  comments: ExportedTaskComment[];
+}
+
+export interface ExportedProject{
+  title: string;
+  members: ExportedUser;
+}
+
+export interface ExportedWorkspace{
+  
+}
