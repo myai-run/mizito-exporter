@@ -14,13 +14,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/xlsx": "^0.0.36",
     "axios": "^1.21.0",
     "dotenv": "^18.0.9"
   },
   "devDependencies": {
     "@types/node": "^22.15.3",
     "tsx": "^4.19.4",
-    "typescript": "~5.8.3"
+    "typescript": "~5.8.3",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
   },
   "devEngines": {
     "packageManager": {

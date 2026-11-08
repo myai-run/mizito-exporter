@@ -206,20 +206,17 @@ export interface ChecklistItem {
   checked_by?: ObjectId;
 }
 
-export interface CommentAttachment {
-  _id: ObjectId;
-}
-
 export interface TaskComment {
   _id: ObjectId;
   comment: string;
-  attachments: CommentAttachment[];
+  attachments: TaskAttachment[];
   mention: ObjectId[];
   replied_comment_id: ObjectId | null;
   comment_at: ISODateString;
   comment_owner: ObjectId;
   edited: boolean;
   deleted: boolean;
+  can_edit?: boolean;
 }
 
 export interface TaskCustomParam {
@@ -342,34 +339,49 @@ export interface ExportedWorkspace{
 }
 
 export interface ExportedUser{
-  name: string;
+  phone: string;
+  fullname: string
   mizito_id: string;
-  workspace: ExportedWorkspace[];
+  workspace: ExportedWorkspace | null;
+  profile_url: string;
 }
 
 export interface ExportedTaskComment{
+  mizito_id: string;
+  task: ExportedTask;
   content: string;
-  creator: ExportedUser;
-  mentioned_user: ExportedUser;
+  creator: ExportedUser | null;
+  mentioned_users: ExportedUser[];
+  replied_comment_id: string | null;
+  comment_at: string;
+  edited: boolean;
+  deleted: boolean;
+  attachment_url: string[];
+}
+
+export interface ExportedBoard{
+  mizito_id: string;
+  title: string;
 }
 
 export interface ExportedTask {
-  workspace_name: string;
-  project_name: string;
+  mizito_id: string;
+  workspace: ExportedWorkspace;
+  project: ExportedProject;
+  board: ExportedBoard | null;
   title: string;
-  start_date: string;
-  finish_date: string;
-  assignee: ExportedUser;
+  start_date: string | null | undefined;
+  finish_date: string | null | undefined;
+  assignee: ExportedUser[];
   owner: ExportedUser;
-  attachment_path: string;
+  attachment_url: string[];
   comments: ExportedTaskComment[];
 }
 
 export interface ExportedProject{
+  mizito_id: string;
   title: string;
-  members: ExportedUser;
-}
-
-export interface ExportedWorkspace{
-  
+  members: ExportedUser[];
+  workspace: ExportedWorkspace;
+  boards: ExportedBoard[];
 }

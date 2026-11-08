@@ -6,7 +6,7 @@ export const MizitoTasksToExportedTasks = (): ExportedTask[] => {
     return exportedTasks;
 }
 
-export const MizitoProjectsToExportedProjects = (projects: Project[]): ExportedProject[] => {
+export const MizitoProjectsToExportedProjects = (_projects: Project[]): ExportedProject[] => {
     const exportedProjects: ExportedProject[] = [];
 
     return exportedProjects;
